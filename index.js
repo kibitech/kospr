@@ -1,12 +1,5 @@
 'use strict';
 
-/**
- * Adds commas to a number
- * @param {number} number
- * @param {string} locale
- * @return {string}
- */
-
 var version = "v.0.1.0";
 var ascii = "" +   
 " +-----------------------------+ \n"+
@@ -37,14 +30,34 @@ var ascii = "" +
 " |         Kibitech PR         | \n" +
 " +-----------------------------+ \n" ;
 
-//console.log(ascii);
-
-
 module.exports =
 {
+  /**
+  * Void function
+  * @param {} void
+  * @return {string}
+  */
   version : function() {
     console.log(ascii)
     return version;
+  },
+   
+  power_on : function() {
+    console.log("*** Kosper "+version+" is running ***")
+    return true;
+  },
+  
+  power_off : function() {
+    console.log("*** Kosper "+version+" is stopped ***")
+    return false;
+  },
+  
+  restart : function()
+  {
+    console.log("*** Kosper "+version+" is restaring ***")
+    this.power_off();
+    this.power_on();
+    return true;
   }
 }
 
