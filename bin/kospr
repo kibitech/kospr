@@ -1,11 +1,4 @@
-'use strict';
-
-/**
- * Adds commas to a number
- * @param {number} number
- * @param {string} locale
- * @return {string}
- */
+#! /usr/bin/env node
 
 var ascii = "" +   
 " +-----------------------------+ \n"+
@@ -36,11 +29,11 @@ var ascii = "" +
 " |         Kibitech PR         | \n" +
 " +-----------------------------+ \n" ;
 
-
-
-
 console.log(ascii);
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
-};
 
+require("../lib/cli")(process.argv, function(err) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+});
