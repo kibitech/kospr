@@ -7,4 +7,4 @@ install:
   - npm install
 
 script:
-  - cd test && npm test
+  #- cd test && npm test
