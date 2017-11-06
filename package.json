@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/kibitech/kospr/issues"
   },
+  "scripts": {
+  "test": "mocha --reporter spec"
+  },
   "homepage": "https://github.com/kibitech/kospr#readme"
 }
