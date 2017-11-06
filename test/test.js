@@ -20,4 +20,8 @@ describe('#kospr', function() {
         var result = kospr.restart();
         expect(result).to.equal(true);
     });
+    it('should show the Kospr status', function() {
+        var result = kospr.status();
+        expect(result).to.equal(true);
+    });
 });

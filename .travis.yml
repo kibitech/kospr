@@ -7,5 +7,5 @@ install:
   - npm install
 
 script:
-  - ls test
+  - npm i mocha
   - npm test
