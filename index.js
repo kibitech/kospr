@@ -7,7 +7,7 @@
  * @return {string}
  */
 
-var ascii = "" +   
+/*var ascii = "" +   
 " +-----------------------------+ \n"+
 " |  _____                      | \n"+
 " | |  |  |___ ___ ___ ___      | \n"+
@@ -36,11 +36,11 @@ var ascii = "" +
 " |         Kibitech PR         | \n" +
 " +-----------------------------+ \n" ;
 
+console.log(ascii);*/
 
-
-
-console.log(ascii);
 module.exports = function(number, locale) {
     return number.toLocaleString(locale);
 };
+
+//module.exports.Server = require("./lib/server");
 
