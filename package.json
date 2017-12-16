@@ -1,6 +1,6 @@
 {
-  "name": "@kibitech.org/kospr",
-  "version": "1.0.0",
+  "name": "kospr",
+  "version": "0.1.0",
   "description": "Kibitech Operative System for Personal Robot",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,9 @@
   },
   "scripts": {
   "test": "mocha --reporter spec"
+  },
+  "bin": {
+    "calc": "./bin/calc"
   },
   "homepage": "https://github.com/kibitech/kospr#readme"
 }
