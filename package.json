@@ -28,7 +28,7 @@
   "test": "mocha --reporter spec"
   },
   "bin": {
-    "calc": "./bin/calc"
+    "kospr": "./bin/kospr"
   },
   "homepage": "https://github.com/kibitech/kospr#readme"
 }
