@@ -4,7 +4,7 @@
   "description": "Kibitech Operative System for Personal Robot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -24,11 +24,15 @@
   "bugs": {
     "url": "https://github.com/kibitech/kospr/issues"
   },
-  "scripts": {
-  "test": "mocha --reporter spec"
-  },
   "bin": {
-    "kospr": "./bin/kospr"
+    "kospr": "./bin/kospr",
+    "klogs": "./bin/kospr"
   },
-  "homepage": "https://github.com/kibitech/kospr#readme"
+  "homepage": "https://github.com/kibitech/kospr#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4",
+    "socketio-auth": "^0.1.0"
+  }
 }

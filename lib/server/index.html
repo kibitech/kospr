@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../node_modules/bootstrap/dis/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dis/css/bootstrap.min.css">
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io('http://192.168.0.13:3000');
+      
+      socket.on('connect', function(soc){
+        console.log('connected');                 
+
+        socket.emit('authentication', {nodekey: "Kibitech_web_2017"});
+        
+        socket.on('authenticated', function(res) {        
+          console.log("Kospr Client connected...");                        
+        });
+        
+        socket.on('unauthorized', function(err){
+          console.log("Kospr Client not connected... err: ", err.message);                  
+        });                   
+      });            
+
+      socket.on('msg', function(msg){
+        console.log(msg);
+        $('#messages').append($('<li>').text(msg));
+      });
+      
+      socket.on('broadcast', function(msg){
+        console.log(msg);
+        $('#messages').append($('<li>B:').text(msg));
+      });
+      function send ()
+      {
+        var txt = $('#m').val();
+        socket.emit('msg', txt);
+      };
+    </script>
+    <!--
+    <div style="width:5em !important;height:10em !important;">
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button type="button" onclick="send()">Send</button>
+    </form>
+    </div>
+    -->
+  </body>
+</html>

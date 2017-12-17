@@ -1,0 +1,3 @@
+[submodule "lib/server/kospr-mgr"]
+	path = lib/server/kospr-mgr
+	url = https://github.com/kibitech/kospr-mgr.git
