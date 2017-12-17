@@ -1,6 +1,7 @@
 'use strict';
 
 var server = require('./lib/server/server.js');
+var api    = require('./lib/API/api.js');
 
 var version = "v.0.1.0";
 var ascii = "" +   
