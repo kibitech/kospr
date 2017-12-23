@@ -30,10 +30,11 @@
   },
   "homepage": "https://github.com/kibitech/kospr#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0-alpha.6",
     "cors": "^2.8.4",
     "express": "^4.16.2",
-    "express-authentication-basic": "^0.3.1",
+    "jsonwebtoken": "^8.1.0",
     "md5": "^2.2.1",
     "mysql": "^2.15.0",
     "sendmail": "^1.2.0",
